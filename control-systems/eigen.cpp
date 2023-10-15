@@ -74,4 +74,17 @@ int main() {
 	MatrixXf matrix1const1;
 	matrix1const1.setConstant(rowNumber, columnNumber, value);
 	cout << "\n \n" << matrix1const1 << endl;
+
+	//identity matrix, two approaches
+
+	rowNumber = 10;
+	columnNumber = 10;
+
+	MatrixXd matrixIdentity;
+	matrixIdentity = MatrixXd::Identity(rowNumber, columnNumber);
+	cout << "\n \n" << matrixIdentity << endl;
+
+	MatrixXd matrixIdentity1;
+	matrixIdentity1.setIdentity(rowNumber, columnNumber);
+	cout << "\n \n" << matrixIdentity1 << endl;
 }

@@ -14,4 +14,10 @@ int main() {
 	matrixA1.setZero();
 	cout << "\n" << matrixA1 << endl;
 
+	//define a dynamic matrix, typedef declaration
+	MatrixXf matrixB1;
+
+	//constructor, allocate memory, but do not initialize
+	MatrixXd matrixC(10, 10);
+
 }

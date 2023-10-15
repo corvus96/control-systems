@@ -106,4 +106,11 @@ int main() {
 
 	cout << "\n\n" << "Row 1 of matrixV is \n " << matrixV.row(0);
 	cout << "\n\n" << "Column 1 of matrixV is \n" << matrixV.col(0);
+
+	//create a diagonal matrix out of a vector
+	Matrix <double, 3, 1> vector1;
+	vector1 << 1, 2, 3;
+	MatrixXd diagonalMatrix;
+	diagonalMatrix = vector1.asDiagonal();
+	cout << " Diagonal matrix is \n\n" << diagonalMatrix;
 }

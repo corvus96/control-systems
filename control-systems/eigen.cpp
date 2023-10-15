@@ -87,4 +87,23 @@ int main() {
 	MatrixXd matrixIdentity1;
 	matrixIdentity1.setIdentity(rowNumber, columnNumber);
 	cout << "\n \n" << matrixIdentity1 << endl;
+
+	//accessing matrix blocks
+	MatrixXd matrixV(4, 4);
+	matrixV << 101, 102, 103, 104,
+		105, 106, 107, 108,
+		109, 110, 111, 112,
+		113, 114, 115, 116;
+	//access the matrix composed of 1:2 rows and 1:2 columns of matrixV
+	MatrixXd matrixVpartition = matrixV.block(0, 0, 2, 2);
+	cout << "\n \n" << matrixVpartition << endl;
+
+	MatrixXd matrixVpartition2 = matrixV.block(1, 1, 2, 2);
+	cout << "\n \n" << matrixVpartition2 << endl;
+
+
+	//accessing columns and rows of a matrix
+
+	cout << "\n\n" << "Row 1 of matrixV is \n " << matrixV.row(0);
+	cout << "\n\n" << "Column 1 of matrixV is \n" << matrixV.col(0);
 }

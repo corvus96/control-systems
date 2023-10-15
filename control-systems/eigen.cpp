@@ -64,4 +64,14 @@ int main() {
 	MatrixXf matrix1ones1;
 	matrix1ones1.setOnes(rowNumber, columnNumber);
 	cout << "\n \n" << matrix1ones1 << endl;
+
+	//matrix of constants
+	float value = 1.1;
+	MatrixXf matrix1const;
+	matrix1const = MatrixXf::Constant(rowNumber, columnNumber, value);
+	cout << "\n \n" << matrix1const << endl;
+	//another option
+	MatrixXf matrix1const1;
+	matrix1const1.setConstant(rowNumber, columnNumber, value);
+	cout << "\n \n" << matrix1const1 << endl;
 }

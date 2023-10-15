@@ -35,4 +35,33 @@ int main() {
 		9, 10, 11, 12,
 		13, 14, 15, 16;
 	cout << endl << matrixD << endl;
+
+	// define a dynamic matrix, resize it to a 3x3 matrix, 
+	// and set its entries to zero, and print the matrix
+	Matrix3f matrixD1;
+	matrixD1.resize(3, 3);
+	matrixD1.setZero(3, 3);
+	cout << endl << matrixD1;
+
+	// setting matrix entries - two approaches
+	int rowNumber = 5;
+	int columnNumber = 5;
+
+	// matrix of zeros
+	MatrixXf matrix1zeros;
+	matrix1zeros = MatrixXf::Zero(rowNumber, columnNumber);
+	cout << "\n \n" << matrix1zeros << endl;
+	// another option:
+	MatrixXf matrix1zeros1;
+	matrix1zeros1.setZero(rowNumber, columnNumber);
+	cout << "\n \n" << matrix1zeros1 << endl;
+
+	//matrix of ones
+	MatrixXf matrix1ones;
+	matrix1ones = MatrixXf::Ones(rowNumber, columnNumber);
+	cout << "\n \n" << matrix1ones << endl;
+	//another option
+	MatrixXf matrix1ones1;
+	matrix1ones1.setOnes(rowNumber, columnNumber);
+	cout << "\n \n" << matrix1ones1 << endl;
 }

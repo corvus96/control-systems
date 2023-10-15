@@ -113,4 +113,54 @@ int main() {
 	MatrixXd diagonalMatrix;
 	diagonalMatrix = vector1.asDiagonal();
 	cout << " Diagonal matrix is \n\n" << diagonalMatrix;
+
+	// basic matrix operations
+	//matrix addition
+	MatrixXd A1(2, 2);
+	MatrixXd B1(2, 2);
+
+	A1 << 1, 2,
+		3, 4;
+	B1 << 3, 4,
+		5, 6;
+	MatrixXd C1 = A1 + B1;
+	cout << " \n\n The sum of A1 and B1 is\n\n" << C1 << endl;
+	// similarly you can subtract A1 and B1
+
+	//matrix multiplication
+	MatrixXd D1 = A1 * B1;
+	cout << " \n\n The matrix product of A1 and B1 is\n\n" << D1 << endl;
+
+	//multiplication by a scalar
+	int s1 = 2;
+	MatrixXd F1;
+	F1 = s1 * A1;
+	cout << " \n\n The matrix product of the scalar 2 and the matrix A1 is\n\n" << F1 << endl;
+
+	//matrix transpose
+	MatrixXd At;
+	MatrixXd R1;
+	// we can obain a transpose of A1 as follows
+	At = A1.transpose();
+	cout << "\n\n Original matrix A1\n\n" << A1;
+	cout << "\n\n Its transpose\n\n " << At;
+
+	// we can use a transpose operator in expressions
+	R1 = A1.transpose() + B1;
+	cout << "\n\n Matrix R1=A1^{T}+B1 is\n\n" << R1;
+
+	// here we should be careful, the operation .transpose() might lead to unexpected results in this scenarios
+	//	A1 = A1.transpose();
+	// cout << " \n\n This should be a transpose of the matrix A1\n\n" << A1 << endl;
+
+	// the correct and safe way to do the matrix transpose is the following
+	A1.transposeInPlace();
+	cout << " \n\n This should be a transpose of the matrix A1\n\n" << A1 << endl;
+	//restore A1 matrix to its original state
+	A1.transposeInPlace();
+	// matrix inverse
+	MatrixXd G1;
+	G1 = A1.inverse();
+	cout << "\n\n The inverse of the matrix A1 is\n\n" << G1;
+	cout << "\n\n Double check A1^{-1}*A1=\n\n" << G1 * A1;
 }
